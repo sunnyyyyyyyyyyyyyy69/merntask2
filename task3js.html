@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+            border: 1px solid black;
+            padding-top: 10px;
+            padding-left: 10px;
+            padding-right: 50px;
+        }
+
+        .form-group {
+            text-align: left;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-group">
+            <form>
+                <table>
+                    <tr>
+                        <td><label for="i1">1st Number: </label></td>
+                        <td><input type="number" id="i1"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="i2">2nd Number: </label></td>
+                        <td><input type="number" id="i2"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button type="button" onclick="multiply()">Multiply</button>
+                            <button type="button" onclick="divide()">Divide</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <p>The Result Is: </p>
+            <p id="p1"></p>
+        </div>
+    </div>
+
+    <script>
+        function multiply() {
+            var a = document.getElementById("i1").value;
+            var b = document.getElementById("i2").value;
+            document.getElementById("p1").innerHTML = parseInt(a) * parseInt(b);
+        }
+
+        function divide() {
+            var a = document.getElementById("i1").value;
+            var b = document.getElementById("i2").value;
+            document.getElementById("p1").innerHTML = parseInt(a) / parseInt(b);
+        }
+    </script>
+</body>
+
+</html>

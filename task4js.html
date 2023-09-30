@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        padding-top: 17%;
+        padding-left: 40%;
+    }
+</style>
+
+<body>
+    <button type="button" onclick='showDate().style.display="block"'>show date</button>
+    <div id="show1"></div><br><br>
+
+    <button type="button" onclick='showGmt().style.display="block"'>show Time</button>
+    <div id="show2"></div>
+
+    <script>
+        function showDate() {
+            const d = new Date();
+            const year = d.getFullYear();
+            const month = d.toLocaleString('default', { month: 'long' });
+            const day = d.getDate();
+            const date = [day, month, year].join("/");
+            document.getElementById("show1").innerHTML = date;
+        }
+
+        function showGmt() {
+            const d = new Date();
+            const time = d.toGMTString() + '+0530 (Indian Standard Time)';
+            //document.write(time);
+            document.getElementById("show2").innerHTML = time;
+        }
+    </script>
+</body>
+
+</html>

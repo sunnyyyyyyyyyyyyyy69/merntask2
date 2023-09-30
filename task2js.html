@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .form-group {
+            text-align: left;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-group">
+            <form>
+                <label for="s1" class="form-label">Enter a string</label>
+                <input class="form-control" type="text" id="s1" name="s1"><br>
+                <button class="btn btn-success text-center text-light" type="button" class="btn"
+                    onclick="alphaOrder()">Order it</button>
+            </form>
+            <p id="res"></p>
+        </div>
+    </div>
+    <script>
+        function alphaOrder() {
+            var s = document.getElementById("s1").value;
+            var arr = s.split("");
+            arr.sort();
+            var sortedStr = arr.join("");
+            document.getElementById("res").textContent = "The Alphabetical Order: " + sortedStr;
+        }
+    </script>
+</body>
+
+</html>
